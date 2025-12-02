@@ -1,0 +1,412 @@
+/* Profile Container */
+.profile-container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.profile-info h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.profile-email {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.profile-join-date {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Streak Section */
+.streak-section {
+    margin-bottom: 40px;
+}
+
+.streak-card {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    margin-bottom: 20px;
+    color: white;
+}
+
+.streak-icon {
+    font-size: 100px;
+    animation: flame 2s ease-in-out infinite;
+}
+
+@keyframes flame {
+    0%, 100% { transform: scale(1) rotate(-5deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.streak-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.streak-number {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.streak-text {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.streak-motivation {
+    font-size: 16px;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.stat-value {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Activity Calendar */
+.activity-calendar {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.activity-calendar h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+.calendar-day:hover {
+    transform: scale(1.1);
+}
+
+.day-label {
+    font-size: 9px;
+    color: #666;
+}
+
+.calendar-day.intensity-1 { background: #c6e48b; }
+.calendar-day.intensity-2 { background: #7bc96f; }
+.calendar-day.intensity-3 { background: #239a3b; }
+.calendar-day.intensity-4 { background: #196127; }
+
+.calendar-day.intensity-1 .day-label,
+.calendar-day.intensity-2 .day-label,
+.calendar-day.intensity-3 .day-label,
+.calendar-day.intensity-4 .day-label {
+    color: white;
+}
+
+.calendar-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.legend-item {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-item.intensity-0 { background: #f0f0f0; }
+.legend-item.intensity-1 { background: #c6e48b; }
+.legend-item.intensity-2 { background: #7bc96f; }
+.legend-item.intensity-3 { background: #239a3b; }
+.legend-item.intensity-4 { background: #196127; }
+
+/* Badges Section */
+.badges-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.badges-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.badges-section h3 {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.badge-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.badge-card.earned {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border-color: #ffd700;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.badge-card.earned:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+.badge-card.locked {
+    opacity: 0.5;
+    background: #f0f0f0;
+}
+
+.badge-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.badge-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.badge-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.badge-desc {
+    font-size: 13px;
+    color: #999;
+    margin-top: 8px;
+}
+
+.no-badges {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Learning Statistics */
+.stats-section {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.stats-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.stat-detail-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.stat-detail-icon {
+    font-size: 56px;
+}
+
+.stat-detail-content h3 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-detail-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-detail-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat-detail-sub {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .streak-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        text-align: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calendar-grid {
+        grid-template-columns: repeat(10, 1fr);
+    }
+    
+    .badges-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+}

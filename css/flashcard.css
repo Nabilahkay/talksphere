@@ -1,0 +1,307 @@
+/* Intro Screen */
+.intro-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    background: white;
+    position: relative;
+}
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #e0e0e0;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.back-btn:hover {
+    background: #f5f5f5;
+    transform: scale(1.05);
+}
+
+.intro-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.intro-content h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.theme-mascot {
+    margin: 50px 0;
+}
+
+.mascot-colors,
+.mascot-numbers,
+.mascot-fruits {
+    font-size: 150px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.learn-now-btn {
+    padding: 18px 50px;
+    background: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+}
+
+.learn-now-btn:hover {
+    background: #1e88e5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(66, 165, 245, 0.4);
+}
+
+/* Flashcard Screen */
+.flashcard-screen {
+    min-height: calc(100vh - 80px);
+    background: #f8f9fa;
+    padding: 30px;
+    position: relative;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 20px 0;
+}
+
+.progress-segments {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.progress-segment {
+    height: 8px;
+    flex: 1;
+    background: #e0e0e0;
+    border-radius: 10px;
+    transition: 0.3s;
+    max-width: 60px;
+}
+
+.progress-segment.active {
+    background: #42a5f5;
+}
+
+.progress-segment.completed {
+    background: #4caf50;
+}
+
+/* Flashcard Container */
+.flashcard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    margin: 40px 0;
+}
+
+.flashcard {
+    width: 600px;
+    height: 400px;
+    background: #f44336;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.flashcard:hover {
+    transform: scale(1.02);
+}
+
+.flashcard-content {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    width: 100%;
+}
+
+.card-english h2 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.card-chinese h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-chinese h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.audio-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.audio-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Navigation Buttons */
+.flashcard-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.nav-btn {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-card-btn {
+    background: #42a5f5;
+    color: white;
+}
+
+.back-card-btn:hover {
+    background: #1e88e5;
+    transform: translateY(-2px);
+}
+
+.continue-btn {
+    background: #4caf50;
+    color: white;
+    flex: 1;
+}
+
+.continue-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Completion Screen */
+.completion-screen {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.completion-screen h1 {
+    font-size: 56px;
+    margin-bottom: 30px;
+    animation: bounce 1s ease-in-out;
+}
+
+.completion-screen p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.completion-message {
+    font-size: 18px !important;
+    opacity: 0.9;
+    margin-bottom: 40px !important;
+}
+
+.finish-btn {
+    padding: 18px 50px;
+    background: white;
+    color:#e53935;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+.finish-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-content h1 {
+        font-size: 32px;
+    }
+    
+    .mascot-colors,
+    .mascot-numbers,
+    .mascot-fruits {
+        font-size: 100px;
+    }
+    
+    .flashcard {
+        width: 90%;
+        height: 350px;
+    }
+    
+    .card-english h2 {
+        font-size: 36px;
+    }
+    
+    .card-chinese h1 {
+        font-size: 60px;
+    }
+    
+    .card-chinese h2 {
+        font-size: 28px;
+    }
+    
+    .flashcard-nav {
+        flex-direction: column;
+    }
+}
