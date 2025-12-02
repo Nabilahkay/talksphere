@@ -1,0 +1,1519 @@
+/* Admin Panel Styles - Based on Figma Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background: linear-gradient(180deg, #8B0000 0%, #B22222 100%);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.admin-logo {
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-icon {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navigation */
+.admin-nav {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.admin-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-left-color: white;
+}
+
+.admin-nav a.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-left-color: white;
+    font-weight: 600;
+}
+
+.admin-nav a span {
+    font-size: 20px;
+}
+
+/* Admin User Section */
+.admin-user {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.admin-info {
+    flex: 1;
+}
+
+.admin-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 3px;
+}
+
+.admin-role {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: capitalize;
+}
+
+.logout-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.admin-main {
+    margin-left: 250px;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+/* Header */
+.admin-header {
+    background: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-header h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-refresh,
+.btn-view-site {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-refresh {
+    background: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    color: #333;
+}
+
+.btn-refresh:hover {
+    background: #e0e0e0;
+}
+
+.btn-view-site {
+    background: #8B0000;
+    border: none;
+    color: white;
+}
+
+.btn-view-site:hover {
+    background: #A52A2A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.stat-card.blue::before { background: #2196F3; }
+.stat-card.green::before { background: #4CAF50; }
+.stat-card.purple::before { background: #9C27B0; }
+.stat-card.orange::before { background: #FF9800; }
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    padding: 0 40px 40px;
+}
+
+/* Admin Card */
+.admin-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.card-header h2 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.view-all {
+    font-size: 14px;
+    color: #8B0000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.view-all:hover {
+    color: #B22222;
+    text-decoration: underline;
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background: #f8f9fa;
+}
+
+.data-table th {
+    padding: 15px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.data-table td {
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.data-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.btn-small {
+    padding: 6px 15px;
+    background: #8B0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-small:hover {
+    background: #A52A2A;
+    transform: translateY(-2px);
+}
+
+/* Activity List */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.activity-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.activity-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.activity-time {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Scrollbar */
+.admin-nav::-webkit-scrollbar,
+.activity-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.admin-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.admin-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.activity-list::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.activity-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.activity-list::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .admin-sidebar.open {
+        transform: translateX(0);
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+
+    .admin-header {
+        padding: 20px;
+    }
+
+    .admin-header h1 {
+        font-size: 22px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .dashboard-grid {
+        padding: 0 20px 20px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card,
+.admin-card {
+    animation: slideIn 0.5s ease;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Vocabulary Actions Styling */
+.vocab-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.vocab-actions .btn-action {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vocab-actions .btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Audio Button */
+.audio-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-btn:hover {
+    background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.5);
+}
+
+.audio-btn:active {
+    transform: scale(0.95);
+}
+
+/* Edit Button in Vocabulary */
+.vocab-actions .btn-edit {
+    background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.vocab-actions .btn-edit::before {
+    margin-right: 4px;
+}
+
+.vocab-actions .btn-edit::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.vocab-actions .btn-edit:hover {
+    background: linear-gradient(135deg, #F57C00 0%, #EF6C00 100%);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.vocab-actions .btn-edit:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Delete Button in Vocabulary */
+.vocab-actions .btn-delete {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.vocab-actions .btn-delete::before {
+    margin-right: 4px;
+}
+
+.vocab-actions .btn-delete::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.vocab-actions .btn-delete:hover {
+    background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+.vocab-actions .btn-delete:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Vocab Card Hover Effect */
+.vocab-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid #f0f0f0;
+}
+
+.vocab-card:hover {
+    border-color: #8B0000;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.15);
+    transform: translateX(5px);
+}
+
+.vocab-card:hover .vocab-actions .btn-action {
+    opacity: 1;
+}
+
+.vocab-actions .btn-action {
+    opacity: 0.9;
+}
+
+/* Button Pulse Animation on Hover */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 152, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+    }
+}
+
+.vocab-actions .btn-edit:hover {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+    }
+}
+
+.vocab-actions .btn-delete:hover {
+    animation: pulse-red 1.5s infinite;
+}
+
+/* Tooltip for Action Buttons */
+.vocab-actions .btn-action {
+    position: relative;
+}
+
+.vocab-actions .btn-action[title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background: #333;
+    color: white;
+    font-size: 11px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInTooltip 0.3s forwards;
+}
+
+.vocab-actions .btn-action[title]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    z-index: 999;
+    opacity: 0;
+    animation: fadeInTooltip 0.3s forwards;
+}
+
+@keyframes fadeInTooltip {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Actions */
+@media (max-width: 768px) {
+    .vocab-card {
+        grid-template-columns: auto 1fr;
+        gap: 15px;
+    }
+
+    .vocab-actions {
+        grid-column: 1 / -1;
+        justify-content: center;
+        padding-top: 15px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .vocab-actions .btn-action {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Loading State for Buttons */
+.btn-action.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn-action.loading::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Confirmation Shake Animation */
+.vocab-card.confirm-delete {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Search Bar Styling for Admin Pages */
+.vocab-filters {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-select {
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    min-width: 150px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #8B0000;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.filter-select:hover {
+    border-color: #A52A2A;
+}
+
+/* Search Input Styling */
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    padding-left: 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 300px;
+    background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>') no-repeat 15px center;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #8B0000;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* Search Button Styling */
+.btn-search {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-search::before {
+    content: '🔍';
+    font-size: 16px;
+}
+
+.btn-search::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-search:hover {
+    background: linear-gradient(135deg, #A52A2A 0%, #B22222 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+}
+
+.btn-search:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-search:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.3);
+}
+
+/* Clear Filter Button */
+.btn-clear {
+    padding: 12px 25px;
+    background: #f5f5f5;
+    color: #666;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-clear::before {
+    content: '✖️';
+    font-size: 14px;
+}
+
+.btn-clear:hover {
+    background: #e0e0e0;
+    border-color: #d0d0d0;
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Bar Form */
+.vocab-filters form {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Search Animation */
+@keyframes searchPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(139, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(139, 0, 0, 0);
+    }
+}
+
+.btn-search:focus {
+    animation: searchPulse 1.5s infinite;
+}
+
+/* Loading State for Search Button */
+.btn-search.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn-search.loading::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Search Bar */
+@media (max-width: 1200px) {
+    .search-input {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vocab-filters {
+        padding: 15px 20px;
+    }
+
+    .vocab-filters form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-select,
+    .search-input {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .btn-search,
+    .btn-clear {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Search Results Highlight */
+.search-highlight {
+    background: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* Advanced Search Toggle (Optional) */
+.advanced-search-toggle {
+    padding: 8px 16px;
+    background: transparent;
+    color: #8B0000;
+    border: 2px dashed #8B0000;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.advanced-search-toggle:hover {
+    background: rgba(139, 0, 0, 0.05);
+    border-style: solid;
+}
+
+/* Search Suggestions Dropdown (Optional Enhancement) */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:hover {
+    background: #f8f9fa;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+/* Search Stats Info */
+.search-info {
+    font-size: 13px;
+    color: #666;
+    padding: 10px 0;
+}
+
+.search-info strong {
+    color: #8B0000;
+    font-weight: 600;
+}
+
+/* Filter Badge */
+.filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(139, 0, 0, 0.1);
+    color: #8B0000;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.filter-badge .remove {
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.filter-badge .remove:hover {
+    opacity: 1;
+}
+/* ============================================
+   THEME MANAGEMENT BUTTON STYLES
+   ============================================ */
+
+/* Add New Theme Button */
+.btn-add {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-add::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-add:hover {
+    background: linear-gradient(135deg, #45a049 0%, #388E3C 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-add:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-add:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Theme Card Action Buttons */
+.theme-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.theme-actions .btn-action {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-actions .btn-action::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.theme-actions .btn-action:hover::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* View Button in Theme Card */
+.theme-actions .btn-view {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.theme-actions .btn-view:hover {
+    background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.5);
+}
+
+.theme-actions .btn-view::before {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+/* Edit Button in Theme Card */
+.theme-actions .btn-edit {
+    background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+.theme-actions .btn-edit:hover {
+    background: linear-gradient(135deg, #F57C00 0%, #EF6C00 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.5);
+}
+
+.theme-actions .btn-edit::before {
+    font-size: 14px;
+}
+
+/* Delete Button in Theme Card */
+.theme-actions .btn-delete {
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.theme-actions .btn-delete:hover {
+    background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.5);
+}
+
+.theme-actions .btn-delete::before {
+    font-size: 14px;
+}
+
+/* Button Pulse Animation */
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.btn-add:focus {
+    animation: buttonPulse 1.5s infinite;
+}
+
+/* Button Loading State */
+.btn-action.loading,
+.btn-add.loading {
+    pointer-events: none;
+    position: relative;
+    color: transparent;
+}
+
+.btn-action.loading::before,
+.btn-add.loading::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Theme Card Hover Effects */
+.theme-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.theme-card:hover .theme-actions .btn-action {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.theme-actions .btn-action {
+    opacity: 0.95;
+    transform: scale(0.98);
+}
+
+/* Icon Buttons */
+.btn-icon-only {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* Tooltip for Buttons */
+.theme-actions .btn-action[title] {
+    position: relative;
+}
+
+.theme-actions .btn-action[title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background: #333;
+    color: white;
+    font-size: 11px;
+    border-radius: 6px;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInTooltip 0.3s forwards;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-actions .btn-action[title]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    z-index: 999;
+    opacity: 0;
+    animation: fadeInTooltip 0.3s forwards;
+}
+
+@keyframes fadeInTooltip {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Disabled Button State */
+.btn-action:disabled,
+.btn-action.disabled,
+.btn-add:disabled,
+.btn-add.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Button Group Spacing */
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+    .theme-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .theme-actions .btn-action {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-add {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Button Shake Animation for Delete Confirmation */
+@keyframes shakeButton {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.btn-delete.confirm {
+    animation: shakeButton 0.5s;
+}
+
+/* Success State for Buttons */
+.btn-action.success {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.btn-action.success::before {
+    content: '✓';
+    font-size: 18px;
+}
+
+/* Button Text Effects */
+.btn-action span,
+.btn-add span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Gradient Border Effect */
+.theme-actions .btn-action.bordered {
+    background: white;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, var(--theme-color, #8B0000), var(--theme-color-dark, #A52A2A)) 1;
+    color: var(--theme-color, #8B0000);
+}
+
+.theme-actions .btn-action.bordered:hover {
+    background: linear-gradient(135deg, var(--theme-color, #8B0000), var(--theme-color-dark, #A52A2A));
+    color: white;
+}
+
+/* Glass Effect Buttons (Alternative Style) */
+.btn-action.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action.glass:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Neon Glow Effect (Optional) */
+.btn-action.neon:hover {
+    box-shadow: 0 0 20px currentColor,
+                0 0 40px currentColor,
+                0 0 60px currentColor;
+}
+
+/* 3D Button Effect */
+.btn-action.btn-3d {
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2),
+                0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-action.btn-3d:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2),
+                0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-action.btn-3d:active {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2),
+                0 2px 6px rgba(0, 0, 0, 0.3);
+}
